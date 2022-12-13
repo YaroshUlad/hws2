@@ -4,36 +4,37 @@ import {AffairType, FilterType} from '../HW2'
 import s from './Affairs.module.css'
 
 type AffairsPropsType = {
-    data: any // need to fix any
-    setFilter: any
-    deleteAffairCallback: any
+    data: AffairType[]
+    setFilter: (value: FilterType) => void
+    deleteAffairCallback: (id: number)=>void
     filter: FilterType
 }
 
 function Affairs(props: AffairsPropsType) {
+    const { data,filter, setFilter, deleteAffairCallback} = props
     const setAll = () => {
-        // need to fix
+        setFilter('all')
     }
     const setHigh = () => {
-        // need to fix
+        setFilter('high')
     }
     const setMiddle = () => {
-        // need to fix
+        setFilter('middle')
     }
     const setLow = () => {
-        // need to fix
+        setFilter('low')
     }
 
-    const cnAll = s.button + ' ' + s.all + (props.filter === 'all' ? ' ' + s.active : '')
-    const cnHigh = s.button + ' ' + s.high + (props.filter === 'high' ? ' ' + s.active : '')
-    const cnMiddle = s.button + ' ' + s.middle + (props.filter === 'middle' ? ' ' + s.active : '')
-    const cnLow = s.button + ' ' + s.low + (props.filter === 'low' ? ' ' + s.active : '')
+    const cnAll = s.button + ' ' + s.all + (filter === 'all' ? ' ' + s.active : '')
+    const cnHigh = s.button + ' ' + s.high + (filter === 'high' ? ' ' + s.active : '')
+    const cnMiddle = s.button + ' ' + s.middle + (filter === 'middle' ? ' ' + s.active : '')
+    const cnLow = s.button + ' ' + s.low + (filter === 'low' ? ' ' + s.active : '')
 
-    const mappedAffairs = props.data.map((a: AffairType) => (
+    const mappedAffairs = data.map((a: AffairType) => (
         <Affair
-            key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
+            key={a._id}
             affair={a}
-            deleteAffairCallback={props.deleteAffairCallback}
+            deleteAffairCallback={deleteAffairCallback}
         />
     ))
 
@@ -73,5 +74,6 @@ function Affairs(props: AffairsPropsType) {
         </div>
     )
 }
+
 
 export default Affairs
