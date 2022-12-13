@@ -6,9 +6,6 @@ import FriendMessage from './friend-message/FriendMessage'
 import avatar from './avatar.png'
 
 /*
-* 2 - описать тип MessagePropsType в файле Message.tsx
-* 3 - в файле Message.tsx отобразить приходящие данные
-* 4 - выполнить пункты 2, 3 в файле FriendMessage.tsx
 * 5 - сделать стили в соответствии с дизайном
 * */
 
@@ -21,20 +18,22 @@ export type MessageType = {
     message: {
         text: string
         time: string
-    },
+    }
 }
 
 export const message0: MessageType = {
     id: 0,
     user: {
         avatar: avatar,
-        name: 'Some Name',
+        name: 'Ivan',
     },
     message: {
-        text: 'some text some text some text some text some text some text some text', 
+        text: 'Hello, she didn’t do anything and rested all day, how are you?', 
         time: '22:00',
+    }
 }
-export const friendMessage0: MessageType = {
+
+const friendMessage0: MessageType = {
     id: 100,
     user: {
         avatar: avatar, 
@@ -43,7 +42,7 @@ export const friendMessage0: MessageType = {
     message: {
         text: 'зеркальное сообщение для тренировки css', 
         time: '22:00',
-    },
+    }
 }
 
 const HW1 = () => {

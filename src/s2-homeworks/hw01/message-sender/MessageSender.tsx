@@ -50,7 +50,7 @@ const MessageSender = (props: any) => {
                     id={'hw1-textarea'}
                     className={s.textarea}
                     ref={textareaRef}
-
+                
                     title={'Shift+Enter for send'}
                     placeholder={'Type your message'}
                     value={text}

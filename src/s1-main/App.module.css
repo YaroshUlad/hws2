@@ -1,11 +1,33 @@
 .App {
     --header_height: 60px;
+    box-sizing: border-box;
 }
 
 .hw {
+    padding: 20px;
+    position: relative;
+}
 
+.hw:after {
+    position: absolute;
+    content: '';
+    border-bottom: 1px solid black;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 .hwTitle {
+    font-size: 20px;
+    position: relative;
+    padding: 5px;
+}
 
+.hwTitle:after {
+    position: absolute;
+    content: '';
+    border-bottom: 1px solid black;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
