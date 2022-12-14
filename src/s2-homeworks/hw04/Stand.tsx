@@ -6,7 +6,7 @@ import SuperButton from './common/c2-SuperButton/SuperButton'
 
 const Stand = () => {
     const [stateForAllInputs, setValue] = useState<string>('')
-    const [error, setError] = useState<string>('')
+    const [error, setError] = useState<string>('asdsd')
 
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
 
@@ -18,7 +18,10 @@ const Stand = () => {
                     <SuperInputText
                         id={'hw4-super-input-like-old'}
                         value={stateForAllInputs}
-                        onChange={(e) => setValue(e.currentTarget.value)}
+                        onChange={(e) =>{ 
+                            setValue(e.currentTarget.value)
+                            if (error) setError('')
+                        }}
                     />
                 </div>
                 {/*инпут с ошибкой:*/}
@@ -82,7 +85,7 @@ const Stand = () => {
                         checked={stateForAllCheckboxes}
                         onChangeChecked={setChecked}
                     >
-                        some text
+                        Hometask
                     </SuperCheckbox>
                 </div>
                 {/*совместим со старым кодом:*/}
