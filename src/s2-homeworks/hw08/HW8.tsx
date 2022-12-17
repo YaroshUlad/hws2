@@ -52,7 +52,6 @@ const HW8 = () => {
         ) // совершеннолетние
         setCurrentSort('18')
     }
-    console.log(people)
 
     return (
         <div id={'hw3'}>
