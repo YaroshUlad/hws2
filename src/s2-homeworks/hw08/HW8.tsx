@@ -61,6 +61,7 @@ const HW8 = () => {
                     <div className={s.buttonsContainer}>
                         <SuperButton
                             id={'hw8-button-up'}
+                            style={{marginRight: '12px'}}
                             onClick={sortUp}
                             xType={currentSort === 'up' ? '' : 'secondary'}
                         >
@@ -68,6 +69,7 @@ const HW8 = () => {
                         </SuperButton>
                         <SuperButton
                             id={'hw8-button-down'}
+                            style={{marginRight: '12px'}}
                             onClick={sortDown}
                             xType={currentSort === 'down' ? '' : 'secondary'}
                         >
