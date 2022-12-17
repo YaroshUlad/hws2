@@ -10,7 +10,7 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
     const days = ['Monday', 'Thuesday', 'Wednesday', 'Thursday','Friday','Saturday','Sunday']
-    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+    const months = ['January', 'February', 'March','April','May','June','July','August','September','October','November','December']
 
     const start = () => {
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
@@ -35,11 +35,13 @@ function Clock() {
         setShow(false)
     }
     let formatter1 = new Intl.DateTimeFormat("ru")
-    const stringTime = date.toLocaleTimeString() || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringTime = date.toLocaleTimeString() || <br/>
+    // console.log(stringTime)// часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = formatter1.format(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = days[date.getDay()] || <br/> // пишут студенты
+    const stringDay = days[date.getDay()-1] || <br/> // пишут студенты
+    // console.log(date.getDay())
     // const stringDay = date.toLocaleDateString() || <br/> // пишут студенты
     const stringMonth = months[date.getMonth()]  || <br/> // пишут студенты
 
